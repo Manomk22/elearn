@@ -1,0 +1,19 @@
+<section class="pt-20">
+    <app-heading class="mb-16 block"
+    subheading="Student Testimonial"
+    heading1="Feedback From"
+    heading2="Student"
+    specialheading=2
+    
+    ></app-heading>
+ <div class="container mx-auto ">
+    <app-slider *ngIf="this.feedbacks.length>0" [items]="this.feedbacks" [slideConfig]="this.slideConfig">
+    <ng-template #template let-item>
+
+
+<app-feedbacks-card [item]="item" ></app-feedbacks-card>
+
+    </ng-template>
+    </app-slider>
+ </div>
+</section>

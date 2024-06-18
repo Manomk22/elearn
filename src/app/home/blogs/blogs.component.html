@@ -1,0 +1,12 @@
+<section class="pt-20">
+    <app-heading class="mb-16 block"
+    subheading="Latest News"
+    heading1="Educational Tips &"
+    heading2="Tricks"
+    specialheading=2
+    
+    ></app-heading>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<app-card *ngFor="let blog of this.blogs" class="w-full  p-3" type="b" [input]="blog"></app-card>
+    </div>
+</section>

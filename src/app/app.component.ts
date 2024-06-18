@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'eLearn';
+  isMenuScrolled=false;
+  isScrolled=false;
+  @HostListener('window:scroll', [ '$ event'])
+  scrollCheck(){
+if(window.pageYOffset>120)
+this.isMenuScrolled=true;
+else
+this.isMenuScrolled=false;
+
+
+
+  }
+  opensidebar(){
+this.isScrolled=true;
+  }
+  closesidebar(){
+this.isScrolled=false;
+  }
+  scrolltotop(){
+    document.body.scrollIntoView({behavior:'smooth'})
+  }
 }
